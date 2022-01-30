@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Guessing Game</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h2 id="result"></h2>
+    <script type ="text/javascript">
+     let guess = 0;
+   let min = 3;//minimum value
+   let max = 10;//maximum value
+   // value between 0 to 0.9999 multiplied by max-min+1
+   let target = Math.random()*(max-min+1);
+  
+   target = Math.floor(target);
+  
+   console.log("random number");
+   console.log(target);
+   while(true){
+       var num = prompt("Guess a number between 1 and 10",0)
+       num = parseInt(num);
+       if(num==target){
+           console.log("you entered");
+           console.log(num);
+           document.getElementById('result').innerHTML="Great job! You got it!";
+           break;
+       }else if(num>target){
+           // document.getElementById('result').innerHTML="too Low!";
+           console.log("you entered");
+           console.log(num);
+           alert("too High");
+       }else{
+           console.log("you entered");
+           console.log(num);
+           alert("too Low");
+           // document.getElementById('result').innerHTML="too Low";
+       }
+   } 
+    </script>
+  </body>
+</html>
